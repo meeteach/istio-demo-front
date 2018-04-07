@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: istio-demo-front
+  labels:
+    app: istio-demo-front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: istio-demo-front
+  template:
+    metadata:
+      labels:
+        app: istio-demo-front
+    spec:
+      containers:
+      - name: istio-demo-front
+        image: registry.cn-hangzhou.aliyuncs.com/niuyandong/istio-demo-front:0.0.1
+        ports:
+        - name: http
+          containerPort: 8080

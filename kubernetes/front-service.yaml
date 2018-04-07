@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: istio-demo-front
+  labels:
+    app: istio-demo-front
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+      name: http
+  selector:
+    app: istio-demo-front
